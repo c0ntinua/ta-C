@@ -7,8 +7,8 @@ int main(void) {
     randomize_ants();
     for (;;) {
             
-            move_ants();
-            usleep(500);
+        move_ants();
+        usleep(6300);
 
 
         respond();

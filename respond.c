@@ -18,5 +18,7 @@ void respond() {
         case '+': cols--; if (cols < 0 ) cols = max_cols - 1;flash();break;
         case '-': rows++; if (rows >= max_rows) rows = 1;flash();break;
         case '_': rows--; if (rows < 0 ) rows = max_rows - 1;flash();break;
+        case 's': randomize_swarm();break;
+        case 'r': randomize_ants();break;
     }
 }

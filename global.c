@@ -11,12 +11,12 @@ int ant_r[max_ants];
 int ant_g[max_ants];
 int ant_b[max_ants];
 int current_target= 0;
-int ants = 75;
+int ants = 25;
 struct termios orig_termios;
 int down = 5;
 int right = 5;
 int rows = 20;
-int cols = 80;
+int cols = 40;
 int display_mode = 0;
 
 

@@ -83,6 +83,22 @@ void randomize_ants() {
 
 	}
 }
+void randomize_swarm() {
+	int common_rule[512];
+	for (int i =0 ; i < 512; i++) common_rule[i] = rand()%8;
+
+	for (int a = 0; a < ants; a++) {
+		for (int i =0 ; i < 512; i++) ant_rule[a][i] = common_rule[i];
+		ant_row[a] = rand()%rows;
+		ant_col[a] = rand()%cols;
+		ant_r[a] = rand()%256;
+		ant_g[a] = rand()%256;
+		ant_b[a] = rand()%256;
+
+
+	}
+
+}
 void move_ant(int a) {
 	int c = ant_rule[a][code(ant_row[a], ant_col[a])];
 	cell[ant_row[a]][ant_col[a]] = !cell[ant_row[a]][ant_col[a]];
@@ -108,10 +124,11 @@ void move_ant(int a) {
 	cursor_to(ant_row[a]+down,ant_col[a]+right);
 	//set_color(100,100,100);
 	//set_color(255,0,0);
-	set_color(ant_r[a],ant_g[a],ant_b[a]);
+	// set_color(ant_r[a],ant_g[a],ant_b[a]);
+	// printf("@");
 	//printf("\u2588");
 	//start_reverse_text();
-	printf("%c",65+a);
+	//printf("%c",65+a);
 	//stop_reverse_text();
 	set_color(255,255,255);
 	// printf("\n");
